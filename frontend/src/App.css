@@ -1,0 +1,66 @@
+.app-home {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.app-home__title {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.app-home__subtitle {
+  max-width: 500px;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+.app-home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.app-home__primary-button {
+  padding: 0.875rem 2rem;
+  font-size: 1.1rem;
+}
+
+.app-page {
+  padding-top: 60px;
+}
+
+.app-page__container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.app-page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.app-page__title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.app-explore-panel,
+.app-chat-panel {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.app-muted-copy {
+  color: var(--text-secondary);
+}

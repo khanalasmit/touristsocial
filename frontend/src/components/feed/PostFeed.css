@@ -1,0 +1,15 @@
+.post-feed__load-more {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.post-feed__load-more-button {
+  border-radius: 20px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.post-feed__spinner {
+  width: 16px;
+  height: 16px;
+}

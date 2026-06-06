@@ -1,0 +1,51 @@
+/* ===== SPINNER ===== */
+.ts-spinner {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  /* softer track */
+  border: 3px solid rgba(0, 0, 0, 0.08);
+  border-top-color: var(--primary);
+
+  animation: spin 0.9s linear infinite;
+
+  /* subtle depth */
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Smooth rotation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== CONTAINER ===== */
+.ts-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.9rem;
+  padding: 2.5rem 1rem;
+
+  /* optional subtle glass */
+  backdrop-filter: blur(6px);
+}
+
+/* ===== TEXT ===== */
+.ts-spinner-text {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}

@@ -1,0 +1,229 @@
+.ts-navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.ts-navbar-brand,
+.ts-nav-link {
+  text-decoration: none;
+}
+
+.ts-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ts-navbar-brand:hover {
+  transform: scale(1.03);
+}
+
+.navbar-brand-icon {
+  font-size: 1.5rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ts-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.ts-nav-link:hover {
+  background: var(--primary-soft);
+  color: var(--text-main);
+}
+
+.ts-nav-link.active {
+  background: var(--primary-soft);
+  color: var(--text-main);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.profile-menu {
+  position: relative;
+}
+
+.profile-menu__trigger {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.8);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0a84ff, #5ac8fa);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  padding: 0;          /* remove browser default button padding */
+  position: relative;  /* so the img can be positioned inside */
+}
+
+.profile-menu__trigger:hover {
+  transform: scale(1.06);
+}
+
+.profile-menu__avatar-image {
+  position: absolute;
+  inset: 0;               /* top:0 right:0 bottom:0 left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* fill the circle, crop excess */
+  object-position: center;
+  border-radius: 999px;
+  display: block;
+}
+
+.profile-menu__dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: var(--radius-md);
+  /* solid opaque background — no bleed-through */
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.profile-menu__dropdown.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.profile-menu__item {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  background: transparent;
+  color: rgba(0,0,0,0.8);
+  text-align: left;
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.profile-menu__item:hover {
+  background: rgba(10,132,255,0.1);
+  color: #0a84ff;
+}
+
+.profile-menu__item--logout {
+  color: #ff3b30;
+}
+
+.profile-menu__item--logout:hover {
+  background: rgba(255,59,48,0.1);
+  color: #ff3b30;
+}
+
+@media (max-width: 768px) {
+  .navbar-inner {
+    gap: 0.2rem;
+    padding: 0 0.5rem;
+  }
+  
+  .ts-navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .ts-nav-link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-inner {
+    padding: 0 0.25rem;
+  }
+  
+  .brand-text {
+    display: none;
+  }
+  
+  .ts-navbar-brand {
+    gap: 0;
+  }
+  
+  .navbar-brand-icon {
+    font-size: 1.4rem;
+    padding-left: 0.25rem;
+  }
+  
+  .ts-nav-link {
+    padding: 0.3rem 0.4rem;
+    font-size: 0.8rem;
+  }
+  
+  .navbar-nav {
+    gap: 0.1rem;
+  }
+}

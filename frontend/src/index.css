@@ -1,0 +1,287 @@
+/* =========================================
+   APPLE LIGHT GLASS UI (VISIONOS STYLE)
+   ========================================= */
+
+:root {
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.35);
+  --glass-bg-strong: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-border-soft: rgba(0, 0, 0, 0.08);
+  --glass-blur: blur(24px) saturate(180%);
+
+  /* Text (LIGHT MODE → DARK TEXT) */
+  --text-main: rgba(0, 0, 0, 0.85);
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --text-tertiary: rgba(0, 0, 0, 0.4);
+
+  /* Accent */
+  --primary: #0a84ff;
+  --primary-soft: rgba(10, 132, 255, 0.2);
+
+  /* Shadows */
+  --shadow-sm: 0 6px 16px rgba(0,0,0,0.12);
+  --shadow-md: 0 12px 30px rgba(0,0,0,0.15);
+  --shadow-lg: 0 24px 60px rgba(0,0,0,0.2);
+
+  /* Radius */
+  --radius-xl: 26px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+}
+
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  /* 🔥 Balanced Apple-like gradient */
+  background: linear-gradient(
+    120deg,
+    #f2f6fb 0%,
+    #dbe7f5 25%,
+    #a9c7e8 50%,
+    #6aa4dc 75%,
+    #3b82d6 100%
+  );
+
+  background-attachment: fixed;
+}
+
+/* Soft light diffusion */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 70% 20%, rgba(255,255,255,0.4), transparent 40%),
+    radial-gradient(circle at 30% 60%, rgba(255,255,255,0.25), transparent 50%);
+
+  filter: blur(60px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 0.8rem 1.5rem;
+}
+
+.navbar a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  color: var(--primary);
+}
+
+.nav-active {
+  background: rgba(10,132,255,0.15);
+  padding: 0.4rem 0.9rem;
+  border-radius: 10px;
+  color: var(--primary);
+}
+
+/* ===== GLASS CARD ===== */
+.ts-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.45),
+    rgba(255,255,255,0.2)
+  );
+
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+
+  box-shadow:
+    var(--shadow-md),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.ts-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== MODAL ===== */
+.ts-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-modal {
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur);
+
+  border-radius: 28px;
+  border: 1px solid var(--glass-border);
+
+  width: 90%;
+  max-width: 520px;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== INPUTS ===== */
+.ts-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border-soft);
+
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+
+  color: var(--text-main);
+  outline: none;
+}
+
+.ts-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+/* ===== BUTTONS ===== */
+.ts-btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Primary */
+.ts-btn-primary {
+  background: linear-gradient(135deg, #0a84ff, #3aa0ff);
+  color: white;
+  box-shadow: 0 8px 20px rgba(10,132,255,0.3);
+}
+
+.ts-btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* Secondary */
+.ts-btn-secondary {
+  background: rgba(255,255,255,0.6);
+  color: rgba(0,0,0,0.8);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* ===== AVATAR ===== */
+.ts-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #0a84ff, #5ac8fa);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-weight: bold;
+
+  box-shadow: 0 8px 18px rgba(10,132,255,0.25);
+}
+
+/* ===== TEXT ===== */
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+small {
+  color: var(--text-tertiary);
+}
+
+/* ===== UTILITIES ===== */
+.container-main {
+  max-width: 720px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .ts-card {
+    border-radius: 20px;
+  }
+
+  .ts-modal {
+    border-radius: 22px;
+  }
+}

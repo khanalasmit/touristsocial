@@ -1,0 +1,217 @@
+/* ===== MODAL CONTAINER ===== */
+.create-post-modal {
+  width: 90%;
+  max-width: 520px;
+
+  border-radius: 28px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.65),
+    rgba(255,255,255,0.35)
+  );
+
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+
+  border: 1px solid rgba(255,255,255,0.8);
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+
+  overflow: hidden;
+}
+
+/* ===== HEADER ===== */
+.create-post-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.2rem 1.5rem;
+
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+
+  background: rgba(255,255,255,0.25);
+}
+
+/* Title */
+.create-post-modal__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Close Button (Apple style) */
+.create-post-modal__close {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0,0,0,0.05);
+  color: var(--text-main);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.create-post-modal__close:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+/* ===== BODY ===== */
+.create-post-modal__body {
+  padding: 1.5rem;
+}
+
+/* ===== ERROR ===== */
+.create-post-modal__error {
+  margin-bottom: 1.2rem;
+
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+
+  background: rgba(255, 59, 48, 0.1);
+  border: 1px solid rgba(255, 59, 48, 0.25);
+  color: #ff3b30;
+
+  font-size: 0.85rem;
+}
+
+/* ===== FORM GROUPS ===== */
+.create-post-modal__field,
+.create-post-modal__place-rating {
+  margin-bottom: 1.4rem;
+}
+
+/* Labels */
+.create-post-modal label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+/* ===== INPUTS ===== */
+.create-post-modal input,
+.create-post-modal textarea,
+.create-post-modal select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+
+  font-size: 0.95rem;
+  color: var(--text-main);
+
+  transition: all 0.2s ease;
+}
+
+.create-post-modal textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.create-post-modal input::placeholder,
+.create-post-modal textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* Focus */
+.create-post-modal input:focus,
+.create-post-modal textarea:focus,
+.create-post-modal select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+  background: rgba(255,255,255,0.9);
+  outline: none;
+}
+
+/* ===== GRID LAYOUTS ===== */
+.create-post-modal__place-rating {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.create-post-modal__coordinates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ===== FOOTER ===== */
+.create-post-modal__footer {
+  display: flex;
+  gap: 0.8rem;
+
+  padding: 1.2rem 1.5rem;
+
+  border-top: 1px solid rgba(0,0,0,0.06);
+
+  background: rgba(255,255,255,0.25);
+}
+
+/* Buttons */
+.create-post-modal__footer-button {
+  flex: 1;
+  padding: 0.75rem;
+
+  border-radius: 14px;
+  border: none;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Primary */
+.create-post-modal__footer-button.primary {
+  background: linear-gradient(135deg, #0a84ff, #3aa0ff);
+  color: white;
+  box-shadow: 0 8px 20px rgba(10,132,255,0.3);
+}
+
+/* Secondary */
+.create-post-modal__footer-button.secondary {
+  background: rgba(255,255,255,0.6);
+  color: var(--text-main);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Spinner */
+.create-post-modal__spinner {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .create-post-modal {
+    border-radius: 22px;
+  }
+
+  .create-post-modal__place-rating,
+  .create-post-modal__coordinates {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,28 @@
+.ts-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.ts-empty-state-icon {
+  margin-bottom: 1rem;
+  color: var(--text-tertiary);
+  font-size: 3.5rem;
+  opacity: 0.6;
+}
+
+.ts-empty-state-title {
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.ts-empty-state-message {
+  color: var(--text-tertiary);
+  font-size: 0.95rem;
+}
